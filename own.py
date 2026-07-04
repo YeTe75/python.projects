@@ -128,7 +128,7 @@ main()"""
 
 
 
-from time import sleep
+"""from time import sleep
 import json
 
 contacts = []
@@ -228,7 +228,103 @@ def main():
 
 
 
-main()
+main()"""
+
+#Знакомство с SQLite
+
+# import sqlite3
+
+# conn = sqlite3.connect("LearningSQL.db")
+
+# print("БД подключена!")
+
+# cursor = conn.cursor()
+
+# cursor.execute("""
+#     CREATE TABLE IF NOT EXISTS contacts(
+#         id INTEGER PRIMARY KEY AUTOINCREMENT,
+#         name TEXT,
+#         phone TEXT,
+#         email TEXT       
+#                )
+               
+#                """)
+
+# cursor.execute("""
+#     INSERT INTO contacts(name,phone,email)
+#     VALUES(?,?,?)""",("Yete","+18394932","yete@mail.ru"))
+
+# cursor.execute("""
+#     UPDATE contacts SET phone = '+70138483443' WHERE name = 'Yete'
+
+#  """)
+# print("Обновлено успешно!")
+
+# cursor.execute("SELECT * FROM contacts")
+# rows = cursor.fetchall()
+# for row in rows:
+#     print(row)
+# conn.commit()
+# print("Таблица установлена!")
+
+# conn.close()
+
+import sqlite3 
+
+conn = sqlite3.connect("Project.db")
+
+cursor = conn.cursor()
+
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS journal(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        names TEXT
+        )
+
+ """)
+cursor.execute("""
+    CREATE TABLE IF NOT EXISTS grades(
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        student_id INTEGER,
+        grade INTEGER)
+ """)
+print("Бд установлено!")
+
+a = 0
+while a <7:
+    name = input("Введите ваше имя- ")
+
+    cursor.execute("""INSERT INTO journal(names)
+               VALUES(?)""",(name,))
+
+    print("Внес в БД!")
 
 
+    grade = int(input("Введите ваши оценки - "))
+    student_id = cursor.lastrowid
+    cursor.execute("""
+        INSERT INTO grades(student_id,grade)
+        VALUES(?,?)""",(student_id,grade,)
+    )
 
+    print("Внес в БД!")
+
+
+    cursor.execute("SELECT * FROM journal")
+    raws = cursor.fetchall()
+    for raw in raws:
+        print(raw)
+
+    cursor.execute("SELECT * FROM grades")
+    g = cursor.fetchall()
+    for grades in g:
+        print(grades)
+
+    numbers = [grades[2] for grades in g]
+    average = sum(numbers) / len(numbers)
+
+    print(f"Средняя оценка учеников = {average}")
+    conn.commit()
+    a += 1
+
+conn.close()
