@@ -6,7 +6,7 @@
 
 ### How to run 
 # 1.Install version Python 3.14.3
-# 2.Create a file with the same name as mine
+# 2.Download the file from this repository
 # 3.Run: python manager_of_finance.py
 
 
@@ -19,5 +19,5 @@
 
 ### How to run  
 # 1.Install version Python 3.14.3
-# 2.Create a file with the same name as mine
+# 2.Download the file from this repository
 # 3.Run: python journalproject.py
