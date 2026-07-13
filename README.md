@@ -13,9 +13,9 @@
 
 # PROJECT - "journalproject.py"
 
-### Description - It can be useful for courses,or schools,or Online schools,which can replace work of old journals.Also,this programm counts average of students's score
+### DESCRIPTION - It can be useful for courses,or schools,or Online schools,which can replace work of old journals.Also,this programm counts average of students's score
 
-### Technologies - Python,SQLite
+### TECHNOLOGIES - Python,SQLite
 
 ### How to run  
 ### 1.Install version Python 3.14.3
@@ -23,9 +23,18 @@
 ### 3.Run: python journalproject.py
 
 # PROJECT - "FastAPI_manager_of_finance.py"
-### Description - My first FastAPI project,it seems easy and primitive,but it really great for personal use or small business.This programm can add,delete,show your transactions,so you can easily track your finances!
+### DESCRIPTION - My first FastAPI project,it seems easy and primitive,but it really great for personal use or small business.This programm can add,delete,show your transactions,so you can easily track your finances!
 ### Technologies - Python,SQLite,FastAPI
-### How to run  
+### HOW TO RUN  
 ### 1.Install version Python 3.14.3
 ### 2.Download the file from this repository
 ### 3.Run: python journalproject.py
+
+# PROJECT - "book_of_receps.py"
+### DESCRIPTION - programme for chiefs or perosns,who keen on cooking or baking! You can add,update,correct,delete or just look your own recipe!It's great option for who really like cooking!
+### TECHNOLOGIES - Python,SQLite,FastAPI,Pydantic model
+### HOW TO RUN  
+### 1.Install version Python 3.14.3
+### 2.Download the file from this repository
+### 3.Run: python book_of_receps.py
+
