@@ -5,19 +5,17 @@ from fastapi import FastAPI
 from passlib.context import CryptContext
 from jose import jwt
 from datetime import datetime, timedelta
-load_dotenv(dotenv_path="c:/Users/user/Desktop/Projects/projects/Python projects/.env")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
+load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY")
 print("SECRET_KEY:", os.getenv("SECRET_KEY"))
 ALGORITHM = "HS256"
 
 pwd_context = CryptContext(schemes=["sha256_crypt"], deprecated = "auto")
-app = FastAPI()
 #dotenv_path="c:/Users/user/Desktop/Projects/projects/Python projects/.env"
 
 
 def get_db():
-    
+    print("DB_PASSWORD:", os.getenv("DB_PASSWORD"))
     conn = psycopg2.connect(
     host = "localhost",
     database = "mydb",
